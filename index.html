@@ -1,8 +1,36 @@
+<!DOCTYPE html>
 <html>
-<head><title>Houghton Cloud</title></head>
-<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
-    <h1>Hola mundo!</h1>
-    <p>This site is hosted on Azure using a static web app.</p>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+    <style>
+        /* Makes the terminal fill the screen */
+        body { margin: 0; background: black; }
+        #terminal { height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+    <script>
+        $('#terminal').terminal({
+            // Define your commands here
+            help: function() {
+                this.echo("Available commands: [[b;#fff;]open_resume], [[b;#fff;]about], [[b;#fff;]contact]");
+            },
+            about: function() {
+                this.echo("Welcome to my site! I am an asprigin Cloud Engineer currently hosting this app on Azure.");
+            },
+            open_resume: function() {
+                this.echo("Opening resume...");
+                // This line opens your resume in a new tab
+                window.open("YOUR_RESUME_URL_HERE.pdf", "_blank");
+            }
+        }, {
+            greetings: 'Welcome to My Portfolio. Type [[b;#fff;]help] to see commands.',
+            prompt: 'guest@houghton-cloud:~$ '
+        });
+    </script>
 </body>
-
 </html>
+
