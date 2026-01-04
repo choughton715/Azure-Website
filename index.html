@@ -13,13 +13,23 @@
 <body>
     <div id="terminal"></div>
     <script>
+
+        const asciiWelcome = `
+         _    _      _                            _          _   _                   _     _               _____ _                 _ 
+        | |  | |    | |                          | |        | | | |                 | |   | |             /  __ \ |               | |
+        | |  | | ___| | ___ ___  _ __ ___   ___  | |_ ___   | |_| | ___  _   _  __ _| |__ | |_ ___  _ __  | /  \/ | ___  _   _  __| |
+        | |/\| |/ _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \  |  _  |/ _ \| | | |/ _` | '_ \| __/ _ \| '_ \ | |   | |/ _ \| | | |/ _` |
+        \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | | | | (_) | |_| | (_| | | | | || (_) | | | || \__/\ | (_) | |_| | (_| |
+         \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/  \_| |_/\___/ \__,_|\__, |_| |_|\__\___/|_| |_(_)____/_|\___/ \__,_|\__,_|
+        `;
+        
         $('#terminal').terminal({
             // Define your commands here
             help: function() {
                 this.echo("Available commands: [[b;#fff;]open_resume], [[b;#fff;]about], [[b;#fff;]contact]");
             },
             about: function() {
-                this.echo("Welcome to my site! I am an asprigin Cloud Engineer currently hosting this app on Azure.");
+                this.echo("Welcome to my site! I am an aspiring Cloud Engineer currently hosting this app on Azure.");
             },
             open_resume: function() {
                 this.echo("Opening resume...");
@@ -27,10 +37,11 @@
                 window.open("YOUR_RESUME_URL_HERE.pdf", "_blank");
             }
         }, {
-            greetings: 'Welcome to My Portfolio. Type [[b;#fff;]help] to see commands.',
+            greetings: 'asciiWelcome + '\n\nWelcome to my portfolio. Type [[b;#fff;]help] to see commands.',
             prompt: 'guest@houghton-cloud:~$ '
         });
     </script>
 </body>
 </html>
+
 
