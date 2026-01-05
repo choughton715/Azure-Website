@@ -4,6 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8IS0tIFNpbXBsZSBQaXhlbCBDbG91ZCBTaGFwZSAtLT4KICA8cGF0aCBmaWxsPSIjNDRjY2ZmIiBkPSJNMjAsNjAgTDIwLDQwIEw0MCw0MCBMNDAsMjAgTDgwLDIwIEw4MCw0MCBMMTAwLDQwIEwxMDAsNjAgTDgwLDYwIEw4MCw4MCBMNDAsODAgTDQwLDYwIFoiIC8+CiAgPCEtLSBUaGUgJ0gnIC0tPgogIDx0ZXh0IHg9IjYwIiB5PSI1NyIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iNDAiIGZpbGw9ImJsYWNrIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5IPC90ZXh0Pgo8L3N2Zz4=">
     <style>
         /* Makes the terminal fill the screen */
         body { margin: 0; background: black; }
@@ -26,23 +27,24 @@
         $('#terminal').terminal({
             // Define your commands here
             help: function() {
-                this.echo("Available commands: [[b;#fff;]open_resume], [[b;#fff;]about], [[b;#fff;]contact]");
+                this.echo("Available commands: [[b;#fff;]resume], [[b;#fff;]about], [[b;#fff;]contact]");
             },
             about: function() {
                 this.echo("Welcome to my site! I am an aspiring Cloud Engineer currently hosting this app on Azure.");
             },
             contact: function() {
-                this.echo("Email: your.email@example.com");
+                this.echo("Email: carlos@houghton.cloud");
             },
-            open_resume: function() {
+            resume: function() {
                 this.echo("Opening resume...");
                 // This line opens your resume in a new tab
-                window.open("YOUR_RESUME_URL_HERE.pdf", "_blank");
+                window.open("resume.pdf", "_blank");
             }
         }, {
-            greetings: asciiWelcome + '\n\nWelcome to my portfolio. Type [[b;#fff;]help] to see commands.',
+            greetings: asciiWelcome + '\n\nWelcome to my site. Type [[b;#fff;]help] to see commands.',
             prompt: 'guest@houghton-cloud:~$ '
         });
     </script>
 </body>
 </html>
+
